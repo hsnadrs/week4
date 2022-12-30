@@ -1,0 +1,62 @@
+* {
+    /* box-sizing: border-box; */
+    /* border: 1px solid red; */
+}
+
+#petChoiceWrapper {
+    border: 2px solid;
+    padding: 10px;
+    height: 100%;
+    width: 300px;
+}
+img {
+    position: relative;
+    display: flex;
+    align-self: auto;
+    height: 250px;
+    width: 250px;
+    object-fit: contain;
+   }
+#petStatusBars {
+    display: flex;
+flex-direction: column  ;  
+justify-content: center;
+  width: 300px;
+    margin-top: 20px;
+
+}
+.clickableImages {
+display: flex;
+align-items: stretch
+
+}
+.gameBox {
+    /* display: none; */
+    direction: ;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+/* 
+#cat,
+#dog,
+#rabbit {
+    display: none;
+    border-image-width:50%;
+}
+.death {
+    display: none;
+    
+} */
+#petWrapper {
+    display: ;
+}
+
+#resetBtn {
+    display: ;
+}
+
+#feedBtn,
+#drinkBtn {
+    display: ;
+}
