@@ -10,7 +10,9 @@ let rabbitImg = document.getElementById('')
 // this is the generic cyberpet class that has properties and methods that can be
 // applied to any animal
 class cyberPet {
-    constructor(name) {
+   constructor(name) {
+ 
+
         this.name = name;
         this.hunger = 100;
         this.thirsty = 100;
@@ -112,7 +114,6 @@ document.querySelector('#drinkBtn').addEventListener('click', () => {
     updateStats();
 })
 //to show image of the animal when choice is clicked
-
 document.querySelectorAll('.choice').forEach((element) => { //checking each option, cat dog rabbit. //element means one html element at a time
     element.addEventListener('change', () => { //adding event listneer for each individual option
 
@@ -133,8 +134,8 @@ document.getElementById('form').addEventListener('submit', (event) => {
     event.preventDefault() //stops the form directing to another page 
     //hide choice and shows gameBox
  
-   //document.getElementById('petChoiceWrapper').style.display = 'none';
-   //document.getElementById('valueBarsWrapper').style.display = 'block';
+   document.getElementById('petChoiceWrapper').style.display = 'none';
+   document.getElementById('gameBox').style.display = 'block';
 
     let chosenPet = '';
     console.log(chosenPet)
@@ -164,8 +165,19 @@ document.getElementById('form').addEventListener('submit', (event) => {
 
 
     // display pet name  in title
-    document.getElementById('name').textContent = pet.name;
-
+    document.getElementById('name').textContent = `${petName} need food/drink`;
+//show image
+let divChild = document.getElementById ('petIcon');//get div for image insertion
+let icon=document.createElement('img'); //create image
+if (chosenPet =="cat"){ //if check which pet image
+icon.src= 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg';
+} else if (chosenPet =="dog"){
+ icon.src= 'https://images.pexels.com/photos/14008804/pexels-photo-14008804.jpeg';
+} else if (chosenPet =="rabbit"){
+ icon.src= 'https://lirp.cdn-website.com/69faaec6/dms3rep/multi/opt/charlie-1920w.jpg';
+}
+divChild.appendChild(icon);//final insertion of img element inside the chosen <div>
+//end of show image
     // start the interval to reduce stats every second
     interval = setInterval(() => {
         pet.thirsty -= 10;

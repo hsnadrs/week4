@@ -1,62 +1,35 @@
+/* Create three equal columns that floats next to each other */
+
 * {
-    /* box-sizing: border-box; */
-    /* border: 1px solid red; */
-}
+    box-sizing: border-box;
+  }
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 45px;
+    background-color: rgb(248, 248, 155);
+    font-size: xx-large;
+    box-shadow: 7px 9px 10px 8px#999
+    -
 
-#petChoiceWrapper {
-    border: 2px solid;
-    padding: 10px;
-    height: 100%;
-    width: 300px;
-}
-img {
-    position: relative;
-    display: flex;
-    align-self: auto;
-    height: 250px;
-    width: 250px;
-    object-fit: contain;
-   }
-#petStatusBars {
-    display: flex;
-flex-direction: column  ;  
-justify-content: center;
-  width: 300px;
-    margin-top: 20px;
-
-}
-.clickableImages {
-display: flex;
-align-items: stretch
-
-}
-.gameBox {
-    /* display: none; */
-    direction: ;
-    align-items: center;
-    padding: 5px 10px;
-}
-
-/* 
-#cat,
-#dog,
-#rabbit {
-    display: none;
-    border-image-width:50%;
-}
-.death {
-    display: none;
-    
-} */
-#petWrapper {
-    display: ;
-}
-
-#resetBtn {
-    display: ;
-}
-
-#feedBtn,
-#drinkBtn {
-    display: ;
-}
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  a {
+    display: block;
+    background: orange;
+    padding: 2px;
+    text-align: center;
+    font-size: xx-large;
+  }
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width:600px) {
+    .column {
+      width: 100%;
+    }
+  }

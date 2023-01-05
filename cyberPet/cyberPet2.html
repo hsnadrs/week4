@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style2.css">
+    <title>Cyber Pet</title>
+</head>
+
+<body>
+    <!-------------------------------------------------------------------------------------->
+    <h1>CyberPet with clickable image and Objects No Classes</h1>
+        <div class="clickableImages" id="clickableImages">
+           <form  id="form1"> 
+            
+             <br/> input cat name before click on image<br/>
+             <input type="text" name="petName" class="cat" default="cat name"/>
+             <input type="hidden" name="petClicked"   value="cat"> <br/>
+             <button type="submit" id="cat" class="cat" >
+                <img src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg" />
+              </button>
+              </form>
+              <form id="form2"> 
+                <br/> input dog name before click on image<br/><input type="text" name="petName" class="dog" default="dog name"/>
+             <input type="hidden" name="petClicked"   value="dog">
+                <br/>
+                <button type="submit" id="dog" class="dog" >
+                <img src="https://images.pexels.com/photos/14008804/pexels-photo-14008804.jpeg" />
+              </button>
+             
+              </form>
+              <form id="form3"> 
+                <br/>
+
+               input rabbit name before click on image<br/>
+              <input type="text" name="petName" class="rabbit" default="rabbit name"/><br/>
+             <input type="hidden" name="petClicked"   value="rabbit"> 
+             <br/>
+             <button type="submit" id="rabbit" class="rabbit" >
+                <img src="https://lirp.cdn-website.com/69faaec6/dms3rep/multi/opt/charlie-1920w.jpg" />
+              </button>
+             
+              </form>
+       
+    </div>
+    <!-------------------------------------------------------------------------------------->
+  
+
+    <!-------------------------------------------------------------------------------------->
+    <!-------------------------------------------------------------------------------------->
+    <!--this section will be the basic structure for ANY of the pets that is chosen-->
+    <div class="gameBox" id="gameBox">
+    
+    <div class="valueBarsWrapper">
+        <div id="barValues">
+            
+            <h4 id="displayPetName"><em>Pet status</em></h4>
+            <div id="petIcon" > </div>
+            <br/>
+            <div class="petStatusBars">
+                <label for="healthStat" class="healthStat" id="healthStat">health</label>
+                <progress class="health" id="health" max="100" value="50"> 50% </progress> <br/>
+                <label for="thirstyStat" class="thirstyStat" id="thirstyStat">thirst</label>
+                <progress class="thirst" id="thirst" max="100" value="60">thirsty</progress><br/>
+                <label for="hungerStat" class="hungerStat" id="hungerStat">hunger</label>
+                <progress class="hunger" id="hunger" max="100" value="60">60%</progress><br/>
+                <label for="lazyState" class="lazyState" id="lazyState">lazy</label>
+                <progress class="lazyState" id="lazyState" max="100" value="60">lazy</progress>
+            </div>
+        </div>
+    </div>
+
+    <div class="petStatusBars">
+        <button type="submit" class="objectButtons" id="buttonPlayWith">Play With</button>
+        <button type="submit" class="objectButtons" id="feedBtn">Give Food</button>
+
+        <button type="submit" class="objectButtons" id="drinkBtn">Drink</button>
+        <button type="submit" class="objectButtons" id="buttonRevivePet">Revive</button>
+
+    </div>
+<div class="death" id="death">
+    <h1 id="message"></h1>
+    <button type="submit" class="resetBtn" id="resetBtn">Reset</button>
+</div>
+</div>
+ <!-- all game box section -->
+    <script src="./app2.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style3.css">
+    <title>Cyber Pet</title>
+</head>
+
+<body>
+    <h1>Cyber Pet drop menu + Keyboard</h1>
+    <!-------------------------------------------------------------------------------------->
+    
+        <div class="clickableImages" id="clickableImages">
+           <form  id="form1"> 
+            
+             <br/> input cat name before submit<br/>
+             
+             <input type="text" name="petName" class="cat" default="cat name"/><br/>
+             <select id="pet" name="petClicked" width="50px">
+                <option value="cat">cat</option>
+                <option value="dog">dog</option>
+                <option value="rabbit">rabbit</option>
+                
+              </select><br/>
+             <button type="submit" id="cat" class="cat" >submit</button>
+                
+              </form>
+              <div class="keyboard"> with keyboard You can press "c" for cat "d" for dog or "r" for rabbit
+                <img src="./buttons.jpg"/>
+
+              </div>
+       
+    </div>
+    <!-------------------------------------------------------------------------------------->
+  
+
+    <!-------------------------------------------------------------------------------------->
+    <!-------------------------------------------------------------------------------------->
+    <!--this section will be the basic structure for ANY of the pets that is chosen-->
+    <div class="gameBox" id="gameBox">
+    
+    <div class="valueBarsWrapper">
+        <div id="barValues">
+            
+            <h4 id="displayPetName"><em>Pet status</em></h4>
+            <div id="petIcon" > </div>
+            <br/>
+            <div class="petStatusBars">
+                <label for="healthStat" class="healthStat" id="healthStat">health</label>
+                <progress class="health" id="health" max="100" value="50"> 50% </progress> <br/>
+                <label for="thirstyStat" class="thirstyStat" id="thirstyStat">thirst</label>
+                <progress class="thirst" id="thirst" max="100" value="60">thirsty</progress><br/>
+                <label for="hungerStat" class="hungerStat" id="hungerStat">hunger</label>
+                <progress class="hunger" id="hunger" max="100" value="60">60%</progress><br/>
+                <label for="lazyState" class="lazyState" id="lazyState">lazy</label>
+                <progress class="lazyState" id="lazyState" max="100" value="60">lazy</progress>
+            </div>
+        </div>
+    </div>
+
+    <div class="petStatusBars">
+        <button type="submit" class="objectButtons" id="buttonPlayWith">Play With</button>
+        <button type="submit" class="objectButtons" id="feedBtn">Give Food</button>
+
+        <button type="submit" class="objectButtons" id="drinkBtn">Drink</button>
+        <button type="submit" class="objectButtons" id="buttonRevivePet">Revive</button>
+
+    </div>
+<div class="death" id="death">
+    <h1 id="message"></h1>
+    <button type="submit" class="resetBtn" id="resetBtn">Reset</button>
+</div>
+</div>
+ <!-- all game box section -->
+    <script src="./app3.js"></script>
+</body>
+
+</html>

@@ -10,75 +10,19 @@
 </head>
 
 <body>
-    <!-------------------------------------------------------------------------------------->
-    <!-------------------------------------------------------------------------------------->
-    <!--this section is the initial box to select the pet which will then dissapear after make pet is pressed-->
 
-    <div id="petChoiceWrapper">
-        <h2>Choose a cyber pet</h2>
-        <form id="form">
-            <!--type=radio means that it can be selected-->
-            <input type="radio" id="petCat" class="choice" value="cat" name="choice" required>
-            <label for="petCat">Cat</label><br>
+    <p>  <h1> Cyber Pet Library collection of the Group </h1></p> <br/>
+   <div class="row">
+ 
+    <a href="./cyberPet1.html" class="column">First working version with radio input and classes</a>
 
-            <input type="radio" id="petDog" class="choice" value="dog" name="choice" required>
-            <label for="petDog">Dog</label><br>
+    <a href="./cyberPet2.html"  class="column">second working version with Objects no classes and clickable images</a>
 
-            <input type="radio" id="petRabbit" class="choice" value="rabbit" name="choice" required>
-            <label for="petRabbit">Rabbit</label>
-            <br><br>
+    <a href="./cyberPet3.html"  class="column">third version with drop down and keyboard button control</a>
 
-            <label for="name">Name your pet:</label>
-            <input id="name" type="text" required placeholder="Pet Name">
-            <br>
-            <!--any of the REQUIRED in the inputs mean that it wont submit the form without it-->
-
-            <button type="submit" id="submitBtn">Make Pet</button>
-        </form>
-    </div>
-
-    <!-------------------------------------------------------------------------------------->
-    <!-------------------------------------------------------------------------------------->
-    <!--this section will be the basic structure for ANY of the pets that is chosen-->
-    <div class="gameBox">
-    <div class="clickableImages">
-    <img id="cat" class="cat" src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg">
-    <img id="dog"  class="dog" src="https://images.pexels.com/photos/14008804/pexels-photo-14008804.jpeg">
-    <img id="rabbit" class="rabbit"   src="https://lirp.cdn-website.com/69faaec6/dms3rep/multi/opt/charlie-1920w.jpg">
-</div>
-    <div class="valueBarsWrapper">
-        <div id="barValues">
-            
-            <h4 class="displayPetName"><em>Pet status</em></h4>
-            <!-- <img id="petIcon" class="petIcon"> -->
-            <div class="petStatusBars">
-                <label for="healthStat" class="healthStat" id="healthStat">health</label>
-                <progress class="health" id="health" max="100" value="50"> 50% </progress> <br/>
-                <label for="thirstyStat" class="thirstyStat" id="thirstyStat">thirst</label>
-                <progress class="thirst" id="thirst" max="100" value="60">thirsty</progress><br/>
-                <label for="hungerStat" class="hungerStat" id="hungerStat">hunger</label>
-                <progress class="hunger" id="hunger" max="100" value="60">60%</progress><br/>
-                <label for="lazyState" class="lazyState" id="lazyState">lazy</label>
-                <progress class="lazyState" id="lazyState" max="100" value="60">lazy</progress>
-            </div>
-        </div>
-    </div>
-
-    <div class="petStatusBars">
-        <button type="submit" class="objectButtons" id="buttonPlayWith">Play With</button>
-        <button type="submit" class="objectButtons" id="feedBtn">Give Food</button>
-
-        <button type="submit" class="objectButtonsRIP" id="drinkBtn">Drink</button>
-        <button type="submit" class="objectButtonsRIP" id="buttonRevivePet">Revive</button>
-
-    </div>
-<div class="death" id="death">
-    <h1 id="message"></h1>
-    <button type="submit" class="resetBtn" id="resetBtn">Reset</button>
-</div>
-</div>
- <!-- all game box section -->
+   </div>
+ 
     <script src="./app.js"></script>
 </body>
 
-</html>
+</html>    <!-- end of choice div -->

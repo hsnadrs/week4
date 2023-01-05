@@ -49,11 +49,6 @@ class Dog extends cyberPet {
     }
 }
 
-// let newPet = new Dog("Doug")
-// newPet.playFetch();
-// newPet.drink()
-
-// console.log(newPet)
 
 // cat builds from the cyberpet again adding more relevant data for a cat as well
 // as the properties from the cyberpet class
@@ -111,44 +106,69 @@ document.querySelector('#drinkBtn').addEventListener('click', () => {
     pet.drink();
     updateStats();
 })
-//to show image of the animal when choice is clicked
-
-document.querySelectorAll('.choice').forEach((element) => { //checking each option, cat dog rabbit. //element means one html element at a time
-    element.addEventListener('change', () => { //adding event listneer for each individual option
-
-        document.querySelectorAll('.choice').forEach((element) => { //checking and changing all of the images
-            const animalImgs = document.getElementById(element.value)
-            animalImgs.style.display = 'none' ; //inner iteration to hide none selected images
-
-            if (element.checked) {
-                animalImgs.style.display = 'block';// show se;ected pet image
-            }
-        })
-
-    })
-})
 
 // gets the form and adds the event listener to it that runs on the forms submit
-document.getElementById('form').addEventListener('submit', (event) => {
+document.getElementById('form1').addEventListener('submit', (event) => {
     event.preventDefault() //stops the form directing to another page 
-    //hide choice and shows gameBox
- 
-   //document.getElementById('petChoiceWrapper').style.display = 'none';
-   //document.getElementById('valueBarsWrapper').style.display = 'block';
+    processSubmittedPet(event);
+});
 
+ //function for the keyboard  
+document.addEventListener('keydown', (event) => {
+    var keyPressed = event.key;
+   
+    let chosenPet ="";
+    //input  Alert the key name and key code on keydown
+    
+    if (keyPressed == 'c' ){
+        chosenPet = "cat";
+    } else if (keyPressed == 'd' ){
+        chosenPet = "dog";
+    } else if (keyPressed == 'r' ){
+        chosenPet = "rabbit";
+    }
+    let petName = window.prompt("Enter the pet name","type here");
+//start the game
+    petStage (chosenPet, petName);
+  }, false);
+  //function for form inputs or mouse clicks not the keyboard
+function processSubmittedPet(event){
+   
+   
     let chosenPet = '';
-    console.log(chosenPet)
-    // checking the radio buttons to see what the user selected and store 
-    // selected value in chosenPet variable
-    document.querySelectorAll('.choice').forEach((element) => {
-        if (element.checked) {
-            // storing the users choice in variable
-            chosenPet = element.value
-        }
-    })
+    let clickedForm = event.target;
+    //console.log(clickedForm);
+    let allFormElements = clickedForm.elements;
 
-    // get the input name value
-    let petName = document.getElementById('name').value;
+    let hiddenInput = allFormElements.petClicked;//hidden input called petClicked
+    let petNameInput = allFormElements.petName;//hidden input called petClicked
+
+    chosenPet =hiddenInput.value;
+    let petName= petNameInput.value;
+    console.log(chosenPet);
+    console.log(petName);
+   //start the game
+    petStage (chosenPet, petName);
+
+
+}
+const petStage =(chosenPet, petName)=>{
+     //hide choice and show status
+   document.getElementById('clickableImages').style.display = 'none';
+   document.getElementById('gameBox').style.display = 'block';
+     //show image
+   let divChild = document.getElementById ('petIcon');
+   let icon=document.createElement('img');
+   if (chosenPet =="cat"){
+   icon.src= 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg';
+} else if (chosenPet =="dog"){
+    icon.src= 'https://images.pexels.com/photos/14008804/pexels-photo-14008804.jpeg';
+ } else if (chosenPet =="rabbit"){
+    icon.src= 'https://lirp.cdn-website.com/69faaec6/dms3rep/multi/opt/charlie-1920w.jpg';
+ }
+   divChild.appendChild(icon);
+  
+    
 
     // create dog or cat based on user choice and pass typed name to class
     if (chosenPet === 'dog') {
@@ -164,7 +184,7 @@ document.getElementById('form').addEventListener('submit', (event) => {
 
 
     // display pet name  in title
-    document.getElementById('name').textContent = pet.name;
+   document.getElementById('displayPetName').textContent = `${petName} please feed, drink or die`;
 
     // start the interval to reduce stats every second
     interval = setInterval(() => {
@@ -179,16 +199,12 @@ document.getElementById('form').addEventListener('submit', (event) => {
         if (pet.hunger <= 0 || pet.thirsty <= 0) {
             clearInterval(interval); // JS function Use clearInterval() to stop the time
             document.getElementById('death').style.display = 'block';
-            document.getElementById('message').textContent = 'pet died';
+            document.getElementById('message').textContent = `${petName} died`;
         }
     }, 1000);
 
 
-   
-
-
-})
-
+}
 document.getElementById('resetBtn').addEventListener('click', () => {
     window.location.reload()
 })
